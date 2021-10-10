@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import BGImage from './images/background.jpg';
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -7,7 +6,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    /* background-image: url(${BGImage}); */
     background-size: cover;
     margin: 0;
     padding: 0 20px;
@@ -32,10 +30,12 @@ export const Wrapper = styled.div`
 
   .score {
     font-size: 2rem;
+    text-align: center;
   }
 
   h1 {
     font-size: 3rem;
+    text-align: center;
   }
 
   .start-btn,
@@ -43,7 +43,7 @@ export const Wrapper = styled.div`
     cursor: pointer;
     display: inline-block;
     padding: 0.75rem 1.25rem;
-    border-radius: 2rem;
+    border-radius: 0.8rem;
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: 0.1rem;
@@ -59,7 +59,6 @@ export const Wrapper = styled.div`
       width: 100%;
       height: 100%;
       background-color: rgb(150, 200, 150);
-      border-radius: 10rem;
       z-index: -2;
     }
     &:before {
@@ -71,7 +70,6 @@ export const Wrapper = styled.div`
       height: 100%;
       background-color: darkgreen;
       transition: all 0.3s;
-      border-radius: 10rem;
       z-index: -1;
     }
     &:hover {

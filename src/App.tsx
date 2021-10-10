@@ -24,6 +24,8 @@ function App() {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [isIncorrect, setIsIncorrect] = useState(false);
 
   const startQuiz = async () => {
     setLoading(true);
@@ -48,7 +50,10 @@ function App() {
       // Add score if answer is correct
       if (correct) {
         setScore(prev => prev + 1);
-      } 
+        setIsCorrect(true);
+      } else {
+        setIsIncorrect(true);
+      }
       // Save answer in the array for user answers
       const answerObject = {
         question: questions[number].question,
@@ -62,6 +67,7 @@ function App() {
 
   const nextQuestion = () => {
     // Move on to the next question if not the last question
+    setIsCorrect(false);
     const nextQuestion = number + 1;
     if (nextQuestion === TOTAL_QUESTIONS) {
       setGameOver(true);
