@@ -38,10 +38,45 @@ export const Wrapper = styled.div`
     text-align: center;
   }
 
+  .correct,
+  .incorrect {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 1.3rem;
+  }
+
+  .correct {
+    color: green;
+  }
+
+  .incorrect {
+    color: red;
+  }
+
+  @media only screen and (max-width: 750px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .score {
+      font-size: 1.5rem;
+    }
+  }
+
   .start-btn,
   .next-question-btn {
     cursor: pointer;
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
     padding: 0.75rem 1.25rem;
     border-radius: 0.8rem;
     text-transform: uppercase;

@@ -68,6 +68,7 @@ function App() {
   const nextQuestion = () => {
     // Move on to the next question if not the last question
     setIsCorrect(false);
+    setIsIncorrect(false);
     const nextQuestion = number + 1;
     if (nextQuestion === TOTAL_QUESTIONS) {
       setGameOver(true);
@@ -87,6 +88,8 @@ function App() {
         ) : null}
         {!gameOver ? <p className="score">Score: <strong>{score}</strong></p> : null}
         {loading && <p className="loading">Loading Questions...</p>}
+        {isCorrect ? <p className="correct">Correct!</p> : null}
+        {isIncorrect ? <p className="incorrect">Inorrect!</p> : null}
         {!loading && !gameOver && (
           <QuestionCard
             questionNumber={number + 1}

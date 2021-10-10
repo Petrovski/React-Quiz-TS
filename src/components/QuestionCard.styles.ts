@@ -14,6 +14,11 @@ export const Wrapper = styled.div`
   p {
     font-size: 1.2rem;
   }
+
+  @media only screen and (max-width: 750px) {
+    max-width: 600px;
+    min-width: 350px;
+  }
 `;
 
 type ButtonWrapperProps = {

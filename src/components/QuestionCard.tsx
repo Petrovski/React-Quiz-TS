@@ -13,26 +13,26 @@ export interface Props {
 };
 
 const QuestionCard: React.FC<Props> = ({ question, answers, callback, userAnswer, questionNumber, totalQuestions, category }) => (
-  <Wrapper>
-    <p className="number">
-      Question: <strong>{questionNumber} / {totalQuestions}</strong>
-    </p>
-    <p>Category: <strong>{category}</strong></p>
-    <p dangerouslySetInnerHTML={{ __html: question }}></p>
-      {answers.map((answer) => {
-        return (
-          <ButtonWrapper
-            key={answer}
-            correct={userAnswer?.correctAnswer === answer}
-            userClicked={userAnswer?.answer === answer}
-          >
-          <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>
-            <span>{answer}</span>
-          </button>
-        </ButtonWrapper>
-        )
-      })}
-  </Wrapper>
+    <Wrapper>
+      <p className="number">
+        Question: <strong>{questionNumber} / {totalQuestions}</strong>
+      </p>
+      <p className="category">Category: <strong>{category}</strong></p>
+      <p dangerouslySetInnerHTML={{ __html: question }}></p>
+        {answers.map((answer) => {
+          return (
+            <ButtonWrapper
+              key={answer}
+              correct={userAnswer?.correctAnswer === answer}
+              userClicked={userAnswer?.answer === answer}
+            >
+            <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>
+              <span>{answer}</span>
+            </button>
+          </ButtonWrapper>
+          )
+        })}
+    </Wrapper>
 )
 
 export default QuestionCard;
